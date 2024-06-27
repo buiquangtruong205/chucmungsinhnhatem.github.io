@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.trai, .phai {
+    width: 28.57%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    animation: slideIn 1s forwards;
+}
+
+.giua {
+    width: 42.86%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.giua h1 {
+    color: white;
+    font-size: 45px;
+}
+
+.giua p {
+    margin: 0 20px;
+    font-size: 25px;
+}
+
+.giua h3 {
+    color: pink;
+    font-size: 30px;
+}
+
+img {
+    width: 300px;
+    height:300px;
+    margin: 10px 0;
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+</style>
+<body>
+    <div class="container">
+        <div class="trai">
+            <img src="anh3.jpg" alt="anh">
+            <img src="anh2.jpg" alt="anh">
+            <img src="anh6.jpg" alt="anh"> 
+            <img src="anh4.jpg" alt="anh">
+            <img src="anh5.jpg" alt="anh">
+            <img src="anh1.jpg" alt="anh">
+        </div>
+        <div class="giua">
+            <h1>🥰Mừng sinh nhật em iu 🥰</h1>
+            <p>Chúc em yêu thật nhiều sức khỏe, ăn nhanh tróng lớn, học hàng thật giỏi cùng với đó là thi đâu đạt đó, đạt được kết quả như mong muốn trong các kì thi và đặc biệt là đỗ vào trường đại học em mong muốn.</p>
+            <p>Làm việc và chuyện gia đình như ý muốn của em.</p>
+            <h3>Chúc em tất cả những gì tốt đẹp nhất sẽ đến với em.</h3>
+            <img style="width:450px; height:450px;" src="happybirthday.jpg" alt="" class="">
+            <img style="width:450px; height:450px;" src="hoahuongduong.jpg" alt="" class="">
+            <img style="width:450px; height:450px;" src="binhminh.jpg" alt="" class="">
+        </div>
+        <div class="phai">
+            <img src="anh7.jpg" alt="anh">
+            <img src="anh8.jpg" alt="anh">
+            <img src="anh9.jpg" alt="anh">
+            <img src="anh10.jpg" alt="anh">
+            <img src="anh11.jpg" alt="anh">
+            <img src="anh12.jpg" alt="anh">
+        </div>
+    </div>
+    <script src="script.js">
+        document.addEventListener("DOMContentLoaded", function() {
+    const imagesLeft = document.querySelectorAll('.trai img');
+    const imagesRight = document.querySelectorAll('.phai img');
+
+    imagesLeft.forEach((img, index) => {
+        setTimeout(() => {
+            img.style.opacity = 1;
+            img.style.transform = 'translateX(0)';
+        }, index * 300);
+    });
+
+    imagesRight.forEach((img, index) => {
+        setTimeout(() => {
+            img.style.opacity = 1;
+            img.style.transform = 'translateX(0)';
+        }, index * 300);
+    });
+});
+
+    </script>
+</body>
+</html>
